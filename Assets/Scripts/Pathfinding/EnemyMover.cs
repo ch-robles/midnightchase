@@ -15,9 +15,17 @@ public class EnemyMover : MonoBehaviour
 
 	EnemyManager enemy;
 
+	// Animator Variables:
+	public Animator anim;
+	bool walkReady; // to trigger pathfinding "walk" animation wao
+	// Model Rotation Variables:
+	public float rotationSpeed;
+
 	void Start()
     {
 		enemy = GetComponent<EnemyManager>();
+		anim = gameObject.GetComponent<Animator>();
+		walkReady = false;
     }
 
 	// EVERYTHING STARTS HERE (AFTER AFTER MAZE CREATION)
@@ -25,6 +33,7 @@ public class EnemyMover : MonoBehaviour
 
 		PathRequestManager.RequestPath(transform.position,target.position, OnPathFound);
         Debug.Log("EnemyMover Running");
+		anim.SetBool("isPathfinding", walkReady);
 	}
 
 	public void OnPathFound(Vector3[] newPath, bool pathSuccessful) {

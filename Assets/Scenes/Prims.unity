@@ -302,6 +302,8 @@ MonoBehaviour:
   target: {fileID: 1625462394}
   deathUI: {fileID: 0}
   inGameUI: {fileID: 0}
+  anim: {fileID: 0}
+  rotationSpeed: 0
 --- !u!114 &600839442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1052,6 +1054,8 @@ MonoBehaviour:
   target: {fileID: 1625462394}
   deathUI: {fileID: 946492038}
   inGameUI: {fileID: 598325774}
+  anim: {fileID: 919132147502014901}
+  rotationSpeed: 0
 --- !u!114 &1702026469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1197,6 +1201,8 @@ MonoBehaviour:
   target: {fileID: 1625462394}
   deathUI: {fileID: 0}
   inGameUI: {fileID: 0}
+  anim: {fileID: 0}
+  rotationSpeed: 0
 --- !u!54 &1836053335
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1920,6 +1926,7 @@ GameObject:
   - component: {fileID: 1702026468}
   - component: {fileID: 1702026469}
   - component: {fileID: 919132147502014900}
+  - component: {fileID: 919132147502014901}
   m_Layer: 9
   m_Name: HunterUnity
   m_TagString: Untagged
@@ -1941,6 +1948,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathUI: {fileID: 946492038}
   inGameUI: {fileID: 598325774}
+--- !u!95 &919132147502014901
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147502014899}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e1374b1cf9b25b54085a2a26c6a0965c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &967880295293172810
 Transform:
   m_ObjectHideFlags: 0
