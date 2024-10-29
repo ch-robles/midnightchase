@@ -504,6 +504,8 @@ MonoBehaviour:
   target: {fileID: 1450425934}
   deathUI: {fileID: 147367660}
   inGameUI: {fileID: 329985118}
+  anim: {fileID: 0}
+  rotationSpeed: 0
 --- !u!4 &805479838
 Transform:
   m_ObjectHideFlags: 0
