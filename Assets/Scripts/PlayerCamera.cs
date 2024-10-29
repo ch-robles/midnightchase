@@ -13,16 +13,18 @@ public class PlayerCamera : MonoBehaviour
 
     bool lockedCursor = true;
 
+    public Manager manager;
+
 
     void Start()
     {
-        
+        manager = FindObjectOfType<Manager>();
     }
 
 
     void Update()
     {
-        if (Manager.GameIsPaused == true || Manager.instance.GetGameState() == GameStates.raceOver)
+        if (Manager.GameIsPaused == true || manager.GetGameState() == GameStates.raceOver)
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
@@ -42,7 +44,7 @@ public class PlayerCamera : MonoBehaviour
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
 
-                if (Manager.instance.GetGameState() == GameStates.running)
+                if (manager.GetGameState() == GameStates.running)
                 {
                     // Collect Mouse Input
                     float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * mouseSensitivity;

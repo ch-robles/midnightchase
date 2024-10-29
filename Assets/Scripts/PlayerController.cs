@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Manager manager;
     [Header("Animator")]
     public Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
+        manager = FindObjectOfType<Manager>();
         anim = GetComponent<Animator>();
     }
 
@@ -17,7 +19,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Manager.instance.GetGameState() == GameStates.countDown)
+        if (manager.GetGameState() == GameStates.countDown)
         {
             return;
         }
