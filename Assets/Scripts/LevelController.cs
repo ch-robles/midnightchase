@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class LevelController : MonoBehaviour
 {
-    public GameObject winUI;
-    public GameObject inGameUI;
-
-
+    public WinPanel winPanelScript;
     private void Awake()
     {
         
@@ -15,8 +12,7 @@ public class LevelController : MonoBehaviour
 
     void Start()
     {
-        winUI = GameObject.FindWithTag("Win");
-        inGameUI = GameObject.FindWithTag("inGameUI"); 
+        winPanelScript = FindObjectOfType<WinPanel>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -24,9 +20,7 @@ public class LevelController : MonoBehaviour
         if (other.tag == "Player")
         {
             Debug.Log("YESSSSSSSSSSSSSSS");
-            winUI.SetActive(true);
-            inGameUI.SetActive(false);
-            Manager.instance.Win();
+            winPanelScript.playerWin = true;
         }
     }
 }
