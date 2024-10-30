@@ -42,9 +42,13 @@ public class PA_Maze : MonoBehaviour
     // private Vector3 startPlayerPosition, endPlayerPosition;
     private float startPlayerRotation;
 
-    void Start()
+    IEnumerator Start()
     {
         // needs to be here for the pathfinder to work LMAO
+
+        row = Manager.instance.mazeSize;
+        column = Manager.instance.mazeSize;
+        gridMaker = GetComponent<Grid>();
         startPosition = new Vector3(3,0,3);
         Vector3 myPos = startPosition;
         unvisitedNodes = new primNode[row,column];
@@ -98,7 +102,7 @@ public class PA_Maze : MonoBehaviour
         }
 
         // if first time visiting a node
-        if (currentNode == null){
+        /*if (currentNode == null){
             int randomX = Random.Range(0, row);
             int randomY = Random.Range(0, column);
             //Debug.Log("Random Node: " + randomX + " , " + randomY);
@@ -111,12 +115,40 @@ public class PA_Maze : MonoBehaviour
             // current frontier not updating here
             //Debug.Log("Node " + currentNode.gizmoNode.name + " selected.");
             currentNode = nextNode(currentNode);
-        }
+        }*/
 
         // gridMaker.GridStart();
-        drawGrid = true;
+        // drawGrid = true;
         // coroutine this?
         //Debug.Log("Maze finish.");
+
+        yield return StartCoroutine(BuildMaze());
+        StopAllCoroutines();
+
+        Manager.instance.SetMazeState(GameStates.mazeFinished);
+        gridMaker.GridStart();
+    }
+
+    IEnumerator BuildMaze(){
+        if (currentNode == null){
+            int randomX = Random.Range(0, row);
+            int randomY = Random.Range(0, column);
+            currentNode = unvisitedNodes[randomX, randomY];
+        }
+        
+        for (int a = 0; a < unvisitedNodes.Length-1; a++){
+            // current frontier not updating here
+            //Debug.Log("Node " + currentNode.gizmoNode.name + " selected.");
+            currentNode = nextNode(currentNode);
+
+            /*if (a == unvisitedNodes.Length-2){
+                Debug.Log(a);
+                GameManager.instance.SetGameState(GameStates.mazeFinished);
+                gridMaker.StartGrid();
+            }*/
+        }
+
+        yield return null;
     }
 
     public primNode nextNode(primNode currentNode){

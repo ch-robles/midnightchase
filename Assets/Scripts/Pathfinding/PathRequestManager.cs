@@ -29,18 +29,17 @@ public class PathRequestManager : MonoBehaviour {
 
     //only requesting path but not processing it yet! will be processed later
 	public static void RequestPath(Vector3 pathStart, Vector3 pathEnd, Action<Vector3[], bool> callback) {
-		
-
-		PathRequest newRequest = new PathRequest(pathStart,pathEnd,callback);
-        //Debug.Log("Requested path.");
-
-        // queues a new request to be processed later
-		instance.pathRequestQueue.Enqueue(newRequest);
-
-        // try processing this request if theres nothing processing atm
-		instance.TryProcessNext();
+		if (Manager.instance.GetMazeState() != GameStates.gridFinished){
+			Debug.Log(Manager.instance.GetMazeState());
+			Debug.Log("Request unsuccessful!");
+			return;
+		} else {
+			PathRequest newRequest = new PathRequest(pathStart,pathEnd,callback);
+			instance.pathRequestQueue.Enqueue(newRequest);
+			instance.TryProcessNext();
+			Debug.Log("Path requested!");
+		}
 	}
-
     // calls to start pathfinding
 	void TryProcessNext() {
         // if not processing a path, and if pathreqqueue is not empty

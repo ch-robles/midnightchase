@@ -23,6 +23,8 @@ public class Grid : MonoBehaviour {
 
 	public void GridStart()/*Awake()*/ {
 		nodeDiameter = nodeRadius*2;
+		gridWorldSize.x = Manager.instance.gridSize;
+		gridWorldSize.y = Manager.instance.gridSize;
 		gridSizeX = Mathf.RoundToInt(gridWorldSize.x/nodeDiameter);
 		gridSizeY = Mathf.RoundToInt(gridWorldSize.y/nodeDiameter);
 		pathfinder = GetComponent<Pathfinding>();
@@ -75,6 +77,8 @@ public class Grid : MonoBehaviour {
 		}
 
 		Debug.Log("Grid created.");
+
+		Manager.instance.SetMazeState(GameStates.gridFinished);
 		// pathfinder.SetGrid();
 	}
 

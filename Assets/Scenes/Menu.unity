@@ -943,7 +943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeVal: 
-  sizeVal: 
+  sizeVal: 0
 --- !u!114 &183079960
 MonoBehaviour:
   m_ObjectHideFlags: 0

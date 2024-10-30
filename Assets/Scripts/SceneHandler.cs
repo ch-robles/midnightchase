@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneHandler : MonoBehaviour
 {
     public string typeVal;
-    public string sizeVal;
+    public int sizeVal;
 
     PA_Maze primsVal;
     RB_Maze recVal;
@@ -33,17 +33,20 @@ public class SceneHandler : MonoBehaviour
 
     public void MazeSize(string buttonValue)
     {
-        sizeVal = buttonValue;
+        sizeVal = int.Parse(buttonValue);
     }
 
     public void GoToNextScene()
     {
-        ValueHandler.mazeType = typeVal;
-        ValueHandler.mazeSize = sizeVal;
+        // ValueHandler.mazeType = typeVal;
+        // ValueHandler.mazeSize = sizeVal;
+        Manager.instance.mazeSize = sizeVal;
+        Manager.instance.gridSize = (sizeVal*5)+1;
 
         if (typeVal == "Recursive")
         {
-            if (sizeVal == "20")
+            SceneManager.LoadSceneAsync(1);
+            /*if (sizeVal == "20")
             {
                 SceneManager.LoadSceneAsync(1);
                 //writer.myPlayerList.mazeType = "Recursive";
@@ -58,11 +61,12 @@ public class SceneHandler : MonoBehaviour
             else if (sizeVal == "50")
             {
                 SceneManager.LoadSceneAsync(1);
-            }
+            }*/
         }
         else if (typeVal == "Prims")
         {
-            if (sizeVal == "20")
+            SceneManager.LoadSceneAsync(2);
+            /*if (sizeVal == "20")
             {
                 SceneManager.LoadSceneAsync(2);
             }
@@ -73,7 +77,7 @@ public class SceneHandler : MonoBehaviour
             else if (sizeVal == "50")
             {
                 SceneManager.LoadSceneAsync(2);
-            }
+            }*/
         }
     }
 }

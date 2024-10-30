@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum GameStates { countDown, running, raceOver };
+public enum GameStates { countDown, running, raceOver, mazeFinished, gridFinished};
 
 public class Manager : MonoBehaviour
 {
     public static Manager instance;
 
     GameStates gameState = GameStates.countDown;
+    GameStates mazeState;
 
     public static bool GameIsPaused = false;
 
+    public int mazeSize, gridSize;
 
 
     void Awake()
@@ -46,6 +48,7 @@ public class Manager : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPaused = true;
         ButtonClick();
+        Debug.Log("Paused");
     }
 
     public void Resume()
@@ -53,6 +56,7 @@ public class Manager : MonoBehaviour
         Time.timeScale = 1f;
         GameIsPaused = false;
         ButtonClick();
+        Debug.Log("Resumed");
     }
 
 
@@ -61,6 +65,7 @@ public class Manager : MonoBehaviour
     public void ButtonClick()
     {
         AudioManager.instance.ButtonClick();
+        Debug.Log("ButtonClick");
     }
 
     public void Death()
@@ -68,6 +73,7 @@ public class Manager : MonoBehaviour
         OnRaceEnd();
         AudioManager.instance.Death();
         Pause();
+        Debug.Log("Death");
     }
 
     public void Win()
@@ -75,6 +81,7 @@ public class Manager : MonoBehaviour
         OnRaceEnd();
         AudioManager.instance.Win();
         Pause();
+        Debug.Log("Win");
     }
 
 
@@ -85,12 +92,14 @@ public class Manager : MonoBehaviour
         Resume();
         SceneManager.LoadSceneAsync(0);
         OnRaceEnd();
+        Debug.Log("GoToMain");
     }
 
     public void QuitGame()
     {
         ButtonClick();
         Application.Quit();
+        Debug.Log("Quit");
     }
 
     public void Restart()
@@ -100,6 +109,7 @@ public class Manager : MonoBehaviour
         Resume();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         OnRaceStart();
+        Debug.Log("Restart");
     }
 
     public void StartGame()
@@ -132,5 +142,18 @@ public class Manager : MonoBehaviour
     {
         gameState = GameStates.raceOver;
     }
+
+    //----------------------------//
+
+    public GameStates GetMazeState()
+    {
+        return mazeState;
+    }
+
+    public void SetMazeState(GameStates _mazeState)
+    {
+        mazeState = _mazeState;
+    }
+    
 
 }
