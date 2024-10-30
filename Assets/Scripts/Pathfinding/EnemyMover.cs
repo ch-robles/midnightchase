@@ -33,6 +33,7 @@ public class EnemyMover : MonoBehaviour
 		PathRequestManager.RequestPath(transform.position,target.position, OnPathFound);
         Debug.Log("EnemyMover Running");
 		anim.SetBool("isPathfinding", walkReady);
+		FaceTarget();
 	}
 
 	public void OnPathFound(Vector3[] newPath, bool pathSuccessful) {
@@ -98,4 +99,10 @@ public class EnemyMover : MonoBehaviour
 			}
 		}
 	}
+
+    void FaceTarget(){
+        Vector3 direction = (target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+    }
 }
