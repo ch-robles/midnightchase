@@ -54,10 +54,10 @@ public class EnemyMover : MonoBehaviour
 		
 		if (path == null || path.Length == 0)
 		{
+			yield break; // Stop the coroutine if the path is invalid
 			deathUI.SetActive(true);
 			inGameUI.SetActive(false);
 			Manager.instance.Death();
-			yield break; // Stop the coroutine if the path is invalid
 		}
 
 		Vector3 currentWaypoint = path[0];
