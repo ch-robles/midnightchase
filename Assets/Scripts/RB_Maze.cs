@@ -38,19 +38,30 @@ public class RB_Maze : MonoBehaviour
 	/*private Vector3 startPlayerPosition, endPlayerPosition;
     private float startPlayerRotation;*/
 
-	public void Start()
+	/*public void*/ IEnumerator Start()
 	{
+		row = Manager.instance.mazeSize;
+        column = Manager.instance.mazeSize;
+        gridMaker = GetComponent<Grid>();
+        totalCells = row * column;
+
+		yield return StartCoroutine(CreateWall());
+
+        Manager.instance.SetMazeState(GameStates.mazeFinished);
+        gridMaker.GridStart();
+
 		//Finding the parent object of the walls if exists
-		GameObject previousMaze = GameObject.FindGameObjectWithTag("Walls");
+		// GameObject previousMaze = GameObject.FindGameObjectWithTag("Walls");
+		
 		// wallLength = wallTrait.getWallLength();
-		try
-		{
+		//try
+		//{
 			// translate text input to int for the fans
 			//row = int.Parse(RowInput.text);
 			//column = int.Parse(ColumnInput.text);
 
 			// calculate number of cells for the maze
-			totalCells = row * column;
+			// totalCells = row * column;
 
 			// move camera to where it can see the maze i think?
 			/*Transform cameraPosition = camera.transform;
@@ -63,7 +74,7 @@ public class RB_Maze : MonoBehaviour
 			cameraPosition.position = new Vector3(0,cameraHeight + 1 ,0);*/
 			
 			//Destroying previous maze if exist
-			if (previousMaze != null)
+			/*if (previousMaze != null)
 			{
 				Destroy(previousMaze);
 			}
@@ -74,12 +85,12 @@ public class RB_Maze : MonoBehaviour
 		catch (System.FormatException e)
 		{
 			Debug.Log(e);
-		}
+		}*/
 	}
 	/// <summary>
 	/// Creating wall gameobject based on rows and columns given
 	/// </summary>
-	public void CreateWall()
+	/*public void*/ IEnumerator CreateWall()
 	{
 		// making a wall. like the legit solidification of the wall
 		wallHolder = new GameObject();
@@ -118,13 +129,14 @@ public class RB_Maze : MonoBehaviour
 			}
 		}
 		// Debug.Log("CreateWall Done");
-		CreateCells();
+		// CreateCells();
+		yield return StartCoroutine(CreateCells());
 	}
 	
 	/// <summary>
 	/// Assigning created walls to the cells direction (north,east,west,south)
 	/// </summary>
-	public void CreateCells()
+	/*public void*/ IEnumerator CreateCells()
 	{ 	
 		cellList = new List<int>();
 		int children = wallHolder.transform.childCount;
@@ -165,7 +177,8 @@ public class RB_Maze : MonoBehaviour
 			
 		}
 		//Debug.Log("CreateCells Done");
-		CreateMaze();
+		// CreateMaze();
+		yield return StartCoroutine(CreateMaze());
 	}
 
 	/// <summary>
@@ -238,7 +251,7 @@ public class RB_Maze : MonoBehaviour
 		//Debug.Log("GiveMeNeighbor Done");
 	}
 	
-	void CreateMaze()
+	/*void*/ IEnumerator CreateMaze()
 	{
 		bool startedBuilding = false;
 		int visitedCells = 0;
@@ -270,6 +283,7 @@ public class RB_Maze : MonoBehaviour
 		}
 
 		//Debug.Log("CreateMaze Done");
+		yield return null;
 	}
 
 	void DestroyWall(int neighbour)
