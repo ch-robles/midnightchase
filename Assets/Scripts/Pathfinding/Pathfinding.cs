@@ -10,6 +10,7 @@ public class Pathfinding : MonoBehaviour {
 	PathRequestManager requestManager;
 	Grid grid;
 	int maxCost = 2;
+	public int maxLength = 0;
 	
 	/*void Awake() {
 		if (GameManager.instance.GetGameState() == GameStates.gridFinished){
@@ -190,6 +191,15 @@ public class Pathfinding : MonoBehaviour {
 			path.Add(currentNode);
 			currentNode = currentNode.parent;
 		}
+
+		Debug.Log("Modified A* Path Length: " + path.Count + " blocks.");
+
+		if (maxLength < path.Count){
+			maxLength = path.Count;
+		}
+
+		Debug.Log("Current maxLength: " + maxLength);
+
 		Vector3[] waypoints = SimplifyPath(path);
 		Array.Reverse(waypoints);
 		return waypoints;
