@@ -27,10 +27,16 @@ public class Pathfinding : MonoBehaviour {
 		grid = GetComponent<Grid>();
 		if (Manager.instance.GetMazeState() == GameStates.gridFinished && grid != null && grid.gridSizeX != 0 && grid.gridSizeY != 0 && requestManager != null){
 			// StopAllCoroutines();
-			Debug.Log("StartFindPath");
+			// Debug.Log("StartFindPath");
 			StartCoroutine(FindPath(startPos,targetPos));
 		} else {
 			Debug.Log("No grid yet.");
+			Debug.Log(Manager.instance.GetMazeState());
+			Debug.Log("Is grid null? " + grid == null);
+			Debug.Log("grid size x " + grid.gridSizeX);
+			Debug.Log("grid size y " + grid.gridSizeY);
+			Debug.Log("Currently kept gridsize: " + Manager.instance.gridSize);
+			Debug.Log("Is request manager null? " + requestManager == null);
 			/*Vector3 still = new Vector3(0f,0f,0f);
 			Vector3[] stillStand = {still};
 			requestManager.FinishedProcessingPath(stillStand, true);
@@ -101,12 +107,12 @@ public class Pathfinding : MonoBehaviour {
         Node startNode = grid.NodeFromWorldPoint(startPos);
 		Node targetNode = grid.NodeFromWorldPoint(targetPos);
 
-		Debug.Log("START " + startNode.walkable);
+		/*Debug.Log("START " + startNode.walkable);
 		Debug.Log("STARTX " + startNode.gridX);
 		Debug.Log("STARTY " + startNode.gridY);
 		Debug.Log("TARGET " + targetNode.walkable);
 		Debug.Log("TARGETX " + targetNode.gridX);
-		Debug.Log("TARGETY " + targetNode.gridX);
+		Debug.Log("TARGETY " + targetNode.gridX);*/
 
 
 		if (startNode.walkable && targetNode.walkable){
@@ -120,7 +126,7 @@ public class Pathfinding : MonoBehaviour {
 
 				if (node == targetNode) {
 					// RetracePathModified(startNode,targetNode);
-					Debug.Log("Node is target node.");
+					// Debug.Log("Node is target node.");
 					pathSuccess = true;
 					break;
 				}
@@ -170,7 +176,7 @@ public class Pathfinding : MonoBehaviour {
 		if (pathSuccess) {
 			waypoints = RetracePath(startNode,targetNode);
 		} else {
-			Debug.Log("Path unsuccessful!");
+			// Debug.Log("Path unsuccessful!");
 		}
 
 		requestManager.FinishedProcessingPath(waypoints,pathSuccess);

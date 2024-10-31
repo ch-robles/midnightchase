@@ -22,11 +22,23 @@ public class Grid : MonoBehaviour {
 	public int gridSizeX, gridSizeY;
 
 	public void GridStart()/*Awake()*/ {
+		Debug.Log("grid started");
 		nodeDiameter = nodeRadius*2;
+
 		gridWorldSize.x = Manager.instance.gridSize;
 		gridWorldSize.y = Manager.instance.gridSize;
+
+		/*Debug.Log("Current manager gridSize: " + Manager.instance.gridSize);
+		Debug.Log("Grid World Size X " + gridWorldSize.x);
+		Debug.Log("Grid World Size Y " + gridWorldSize.y);*/
+
 		gridSizeX = Mathf.RoundToInt(gridWorldSize.x/nodeDiameter);
 		gridSizeY = Mathf.RoundToInt(gridWorldSize.y/nodeDiameter);
+
+		/*Debug.Log("Node Diameter " + nodeDiameter);
+		Debug.Log("gridSizeX " + gridSizeX);
+		Debug.Log("gridSizeY " + gridSizeY);*/
+
 		pathfinder = GetComponent<Pathfinding>();
 		// Debug.Log("Is pathfinding empty? " + pathfinder == null);
 		CreateFloor();
@@ -46,21 +58,21 @@ public class Grid : MonoBehaviour {
 		floorPos = new Vector3(gridSizeX/2, -1.25f, gridSizeY/2);
 		floor = Instantiate(floorPrefab,floorPos,Quaternion.identity) as GameObject;
 		floor.transform.localScale = new Vector3(gridSizeX + 5, 0.5f, gridSizeY + 5);
-		Debug.Log("Floor created!");
+		// Debug.Log("Floor created!");
 	}
 
 	void PlaceStart(){
 		startPos = new Vector3(3, 0, gridSizeY - 3);
 		start = Instantiate(startPrefab,startPos,Quaternion.identity) as GameObject;
 		// floor.transform.localScale = new Vector3(gridSizeX, 0.5f, gridSizeY);
-		Debug.Log("Start block created!");
+		// Debug.Log("Start block created!");
 	}
 
 	void PlaceEnd(){
 		endPos = new Vector3(gridSizeX - 3, 0, 3);
 		end = Instantiate(endPrefab,endPos,Quaternion.identity) as GameObject;
 		// floor.transform.localScale = new Vector3(gridSizeX, 0.5f, gridSizeY);
-		Debug.Log("End block created!");
+		// Debug.Log("End block created!");
 	}
 
 	void CreateGrid() {
@@ -76,7 +88,7 @@ public class Grid : MonoBehaviour {
 			}
 		}
 
-		Debug.Log("Grid created.");
+		// Debug.Log("Grid created.");
 
 		Manager.instance.SetMazeState(GameStates.gridFinished);
 		// pathfinder.SetGrid();

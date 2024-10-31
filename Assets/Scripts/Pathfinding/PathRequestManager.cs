@@ -37,7 +37,7 @@ public class PathRequestManager : MonoBehaviour {
 			PathRequest newRequest = new PathRequest(pathStart,pathEnd,callback);
 			instance.pathRequestQueue.Enqueue(newRequest);
 			instance.TryProcessNext();
-			Debug.Log("Path requested!");
+			// Debug.Log("Path requested!");
 		}
 	}
     // calls to start pathfinding
@@ -51,7 +51,7 @@ public class PathRequestManager : MonoBehaviour {
 
             // find the path
 			pathfinding.StartFindPath(currentPathRequest.pathStart, currentPathRequest.pathEnd);
-			Debug.Log("Process nexting");
+			// Debug.Log("Process nexting");
 		}
 	}
 

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum GameStates { countDown, running, raceOver, mazeFinished, gridFinished};
+public enum GameStates { countDown, running, raceOver, noMaze, mazeFinished, gridFinished};
 
 public class Manager : MonoBehaviour
 {
     public static Manager instance;
 
     GameStates gameState = GameStates.countDown;
-    GameStates mazeState;
+    GameStates mazeState = GameStates.noMaze;
 
     public static bool GameIsPaused = false;
 
@@ -74,6 +74,7 @@ public class Manager : MonoBehaviour
         AudioManager.instance.Death();
         Pause();
         Debug.Log("Death");
+        SetMazeState(GameStates.noMaze);
     }
 
     public void Win()
@@ -108,7 +109,8 @@ public class Manager : MonoBehaviour
         instance = null;
         Resume();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        OnRaceStart();
+        // OnRaceStart();
+        LevelStart();
         Debug.Log("Restart");
     }
 

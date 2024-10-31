@@ -31,7 +31,7 @@ public class EnemyMover : MonoBehaviour
 	// EVERYTHING STARTS HERE (AFTER AFTER MAZE CREATION)
 	void Update() {
 		PathRequestManager.RequestPath(transform.position,target.position, OnPathFound);
-        Debug.Log("EnemyMover Running");
+        // Debug.Log("EnemyMover Running");
 		anim.SetBool("isPathfinding", walkReady);
 		FaceTarget();
 	}
@@ -42,14 +42,14 @@ public class EnemyMover : MonoBehaviour
 			targetIndex = 0;
 			walkReady = false;
 			StopCoroutine("FollowPath");
-			Debug.Log("Stopped Following Path");
+			// Debug.Log("Stopped Following Path");
 			StartCoroutine("FollowPath");
 		}
 	}
 
 	IEnumerator FollowPath() {
 		walkReady = true;
-		Debug.Log("Following Path");
+		// Debug.Log("Following Path");
 
 		
 		if (path == null || path.Length == 0)
