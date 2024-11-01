@@ -301,13 +301,13 @@ public class PA_Maze : MonoBehaviour
     }
 
     // IM THE GOAT
-    void Update(){
+    /*void Update(){
         if (drawGrid == true){
             gridMaker.GridStart();
             player.PlacePlayer();
             gameObject.SetActive(false);
             // so it stops running after the gridmakers done
         }
-    }
+    }*/
 }
 

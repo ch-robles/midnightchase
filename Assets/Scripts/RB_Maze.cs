@@ -317,14 +317,14 @@ public class RB_Maze : MonoBehaviour
 		//Debug.Log("DestroyWall Done");
 	}
 
-	void Update(){
+	/*void Update(){
         if (drawGrid == true){
             gridMaker.GridStart();
             player.PlacePlayer();
             gameObject.SetActive(false);
             // so it stops running after the gridmakers done
         }
-    }
+    }*/
 }
 
 // recback code by bakor

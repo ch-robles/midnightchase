@@ -192,13 +192,13 @@ public class Pathfinding : MonoBehaviour {
 			currentNode = currentNode.parent;
 		}
 
-		Debug.Log("Modified A* Path Length: " + path.Count + " blocks.");
+		// Debug.Log("Modified A* Path Length: " + path.Count + " blocks.");
 
 		if (maxLength < path.Count){
 			maxLength = path.Count;
 		}
 
-		Debug.Log("Current maxLength: " + maxLength);
+		// Debug.Log("Current maxLength: " + maxLength);
 
 		Vector3[] waypoints = SimplifyPath(path);
 		Array.Reverse(waypoints);

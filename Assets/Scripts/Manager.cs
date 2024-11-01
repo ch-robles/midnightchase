@@ -121,6 +121,7 @@ public class Manager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         LevelStart();
         Resume();
+        Debug.Log("StartGame");
     }
 
     //----------------------------//
