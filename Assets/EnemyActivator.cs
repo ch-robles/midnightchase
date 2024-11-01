@@ -19,18 +19,18 @@ public class EnemyActivator : MonoBehaviour
         if (Manager.instance.mazeSize == 20){
 
             // yield return new WaitForSeconds(5);
-            Debug.Log("Current mazesize is: " + Manager.instance.mazeSize);
+            // Debug.Log("Current mazesize is: " + Manager.instance.mazeSize);
             seconds = 5;
 
         } else if (Manager.instance.mazeSize == 35){
             // yield return new WaitForSeconds(10);
-            Debug.Log("Current mazesize is: " + Manager.instance.mazeSize);
+            // Debug.Log("Current mazesize is: " + Manager.instance.mazeSize);
             seconds = 10;
 
         } else if (Manager.instance.mazeSize == 50){
 
             // yield return new WaitForSeconds(20);
-            Debug.Log("Current mazesize is: " + Manager.instance.mazeSize);
+            // Debug.Log("Current mazesize is: " + Manager.instance.mazeSize);
             seconds = 20;
         }
 

@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        manager = FindObjectOfType<Manager>();
+        // manager = FindObjectOfType<Manager>();
         anim = GetComponent<Animator>();
     }
 
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (manager.GetGameState() == GameStates.countDown)
+        if (Manager.instance.GetGameState() == GameStates.countDown)
         {
             return;
         }

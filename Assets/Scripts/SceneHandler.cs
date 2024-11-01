@@ -46,6 +46,7 @@ public class SceneHandler : MonoBehaviour
         if (typeVal == "Recursive")
         {
             SceneManager.LoadSceneAsync(1);
+            Manager.instance.LevelStart();
             /*if (sizeVal == "20")
             {
                 SceneManager.LoadSceneAsync(1);
@@ -66,6 +67,7 @@ public class SceneHandler : MonoBehaviour
         else if (typeVal == "Prims")
         {
             SceneManager.LoadSceneAsync(2);
+            Manager.instance.LevelStart();
             /*if (sizeVal == "20")
             {
                 SceneManager.LoadSceneAsync(2);
