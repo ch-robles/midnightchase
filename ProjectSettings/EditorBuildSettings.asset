@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Prims.unity
     guid: bc360fe0803ec594a98419b702d3200b
+  - enabled: 1
+    path: Assets/Scenes/RecBack(2).unity
+    guid: 3f8fc9d7ab824af47b03f2b64c19156f
   m_configObjects: {}
