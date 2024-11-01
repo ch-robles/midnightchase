@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIHandler : MonoBehaviour
 {
@@ -33,7 +34,10 @@ public class UIHandler : MonoBehaviour
 
     public void Restart()
     {
-        Manager.instance.Restart();
+        // Manager.instance.Restart();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Manager.instance.Resume();
+        Manager.instance.LevelStart();
     }
 
     public void StartGame()
