@@ -6,7 +6,7 @@ public class LevelControllerEnemy : MonoBehaviour
 {
     public GameObject deathUI;
     public GameObject inGameUI;
-
+    public DataCreator dataCreatorScript;
 
     private void Awake()
     {
@@ -15,7 +15,7 @@ public class LevelControllerEnemy : MonoBehaviour
 
     void Start()
     {
-
+        dataCreatorScript = FindObjectOfType<DataCreator>();
     }
 
     void OnCollisionStay(Collision other)
@@ -25,6 +25,9 @@ public class LevelControllerEnemy : MonoBehaviour
             deathUI.SetActive(true);
             inGameUI.SetActive(false);
             Manager.instance.Death();
+            dataCreatorScript.playerStatus = "lose";
+            dataCreatorScript.playerReason = "Enemy caught the player";
+            dataCreatorScript.AddToList();
         }
     }
 }

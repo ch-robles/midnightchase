@@ -21,7 +21,6 @@ public class WinPanel : MonoBehaviour
         if (playerWin == true){
             winUI.SetActive(true);
             inGameUI.SetActive(false);
-            Manager.instance.Win();
             playerWin = false;
         }
     }

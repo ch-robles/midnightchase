@@ -14,6 +14,7 @@ public class EnemyMover : MonoBehaviour
 	public GameObject inGameUI;
 
 	EnemyManager enemy;
+	public DataCreator dataCreatorScript;
 
 	// Animator Variables:
 	public Animator anim;
@@ -26,6 +27,7 @@ public class EnemyMover : MonoBehaviour
 		enemy = GetComponent<EnemyManager>();
 		anim = gameObject.GetComponent<Animator>();
 		walkReady = false;
+		dataCreatorScript = FindObjectOfType<DataCreator>();
     }
 
 	// EVERYTHING STARTS HERE (AFTER AFTER MAZE CREATION)
@@ -55,9 +57,7 @@ public class EnemyMover : MonoBehaviour
 		if (path == null || path.Length == 0)
 		{
 			yield break; // Stop the coroutine if the path is invalid
-			deathUI.SetActive(true);
-			inGameUI.SetActive(false);
-			Manager.instance.Death();
+			
 		}
 
 		Vector3 currentWaypoint = path[0];

@@ -13,11 +13,14 @@ public class SceneHandler : MonoBehaviour
 
     CSVWriter writer;
 
+    public DataCreator dataCreatorScript;
+
     // Start is called before the first frame update
     void Start()
     {
         
         writer = GetComponent<CSVWriter>();
+        dataCreatorScript = FindObjectOfType<DataCreator>();
     }
 
     // Update is called once per frame
@@ -29,11 +32,13 @@ public class SceneHandler : MonoBehaviour
     public void MazeType(string buttonValue)
     {
         typeVal = buttonValue;
+        dataCreatorScript.chosenType = typeVal;
     }
 
     public void MazeSize(string buttonValue)
     {
         sizeVal = int.Parse(buttonValue);
+        dataCreatorScript.chosenSize = sizeVal;
     }
 
     public void GoToNextScene()
@@ -83,4 +88,5 @@ public class SceneHandler : MonoBehaviour
             }*/
         }
     }
+
 }

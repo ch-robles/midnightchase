@@ -6,32 +6,45 @@ using System.IO;
 public class CSVWriter : MonoBehaviour
 {
     string filename = "";
+    public static CSVWriter instance;
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
 
+    }
 
     public class Player
     {
 
         public int testNum;
         public string mazeType;
-        public string mazeSize;
+        public int mazeSize;
         public int maxDis;
         public string status;
         public string reason;
 
     }
 
-    public class PlayerList
-    {
-        public Player[] player;
-    }
-
-    public PlayerList myPlayerList = new PlayerList();
+    public List<Player> playerList = new List<Player>();
 
 
     // Start is called before the first frame update
     void Start()
     {
-        filename = Application.dataPath + "/test.csv";
+        int i = 1;
+        do
+        {
+            filename = Application.dataPath + "/csvFiles/test" + i + ".csv";
+            i++;
+        } while (File.Exists(filename));
     }
 
     // Update is called once per frame
@@ -45,24 +58,25 @@ public class CSVWriter : MonoBehaviour
 
     public void WriteCSV()
     {
-        if(myPlayerList.player.Length > 0)
+        if(playerList.Count > 0)
         {
-            TextWriter tw = new StreamWriter(filename, false);
-            tw.WriteLine("Test #, Maze Type, Maze Size, Max Distance, Status, Reason");
-            tw.Close();
-
-            tw = new StreamWriter(filename, true);
-
-            for(int i = 0; i < myPlayerList.player.Length; i++)
+            using (TextWriter tw = new StreamWriter(filename, false))
             {
-                tw.WriteLine(myPlayerList.player[i].testNum + "," +
-                    myPlayerList.player[i].mazeType + "," +
-                    myPlayerList.player[i].mazeSize + "," +
-                    myPlayerList.player[i].maxDis + "," +
-                    myPlayerList.player[i].status + "," +
-                    myPlayerList.player[i].reason);
+                tw.WriteLine("Test #, Maze Type, Maze Size, Max Distance, Status, Reason");
             }
-            tw.Close();
+
+            using (TextWriter tw = new StreamWriter(filename, true))
+            {
+                foreach (var player in playerList)
+                {
+                    tw.WriteLine(player.testNum + "," +
+                                 player.mazeType + "," +
+                                 player.mazeSize + "," +
+                                 player.maxDis + "," +
+                                 player.status + "," +
+                                 player.reason);
+                }
+            }
         }
     }
 }

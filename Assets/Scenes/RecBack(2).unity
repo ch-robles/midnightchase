@@ -1355,6 +1355,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5730819074552316488, guid: f1010dccbf72d9b49b81b09597f965aa,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5730819074552316489, guid: f1010dccbf72d9b49b81b09597f965aa,
         type: 3}
       propertyPath: m_Name
@@ -1365,6 +1370,11 @@ PrefabInstance:
       propertyPath: characterReference
       value: 
       objectReference: {fileID: 466949827}
+    - target: {fileID: 5730819074552316534, guid: f1010dccbf72d9b49b81b09597f965aa,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1010dccbf72d9b49b81b09597f965aa, type: 3}
 --- !u!1 &953634932
@@ -2653,6 +2663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLength: 0
+  dataCreatorScript: {fileID: 0}
 --- !u!114 &1944861394
 MonoBehaviour:
   m_ObjectHideFlags: 0

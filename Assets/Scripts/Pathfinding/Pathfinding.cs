@@ -11,6 +11,7 @@ public class Pathfinding : MonoBehaviour {
 	Grid grid;
 	int maxCost = 2;
 	public int maxLength = 0;
+	public DataCreator dataCreatorScript;
 	
 	/*void Awake() {
 		if (GameManager.instance.GetGameState() == GameStates.gridFinished){
@@ -21,6 +22,10 @@ public class Pathfinding : MonoBehaviour {
 
 	void Awake() {
 		requestManager = GetComponent<PathRequestManager>();
+	}
+
+	void Start(){
+		dataCreatorScript = FindObjectOfType<DataCreator>();
 	}
 	
 	
@@ -200,6 +205,8 @@ public class Pathfinding : MonoBehaviour {
 
 		// Debug.Log("Current maxLength: " + maxLength);
 
+		dataCreatorScript.maxDistance = maxLength;
+
 		Vector3[] waypoints = SimplifyPath(path);
 		Array.Reverse(waypoints);
 		return waypoints;
@@ -228,6 +235,8 @@ public class Pathfinding : MonoBehaviour {
 			return 14*dstY + 10* (dstX-dstY);
 		return 14*dstX + 10 * (dstY-dstX);
 	}
+
+	
 	
 	
 }

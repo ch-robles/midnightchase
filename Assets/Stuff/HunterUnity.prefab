@@ -966,10 +966,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 2.5
+  m_Radius: 2.7508814
   m_Height: 13.85149
   m_Direction: 1
-  m_Center: {x: 0, y: 6.030591, z: 1.664985}
+  m_Center: {x: 0, y: 6.030591, z: 1.9158667}
 --- !u!23 &7772496927761742767
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1024,6 +1024,7 @@ MonoBehaviour:
   target: {fileID: 0}
   deathUI: {fileID: 0}
   inGameUI: {fileID: 0}
+  dataCreatorScript: {fileID: 0}
   anim: {fileID: 7429845472442877682}
   rotationSpeed: 0
 --- !u!114 &7772496927761742754
@@ -1052,6 +1053,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathUI: {fileID: 0}
   inGameUI: {fileID: 0}
+  dataCreatorScript: {fileID: 0}
 --- !u!95 &7429845472442877682
 Animator:
   serializedVersion: 3
