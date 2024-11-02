@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907209772424250614}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 82.4, y: 100, z: 12.1}
+  m_LocalPosition: {x: 82.4, y: 110, z: 12.1}
   m_LocalScale: {x: 5, y: 12, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -93,5 +93,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterReference: {fileID: 0}
-  characterOffset: 100
+  characterOffset: 110
   characterRotationX: 90

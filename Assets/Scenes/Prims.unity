@@ -1661,6 +1661,11 @@ PrefabInstance:
       propertyPath: characterReference
       value: 
       objectReference: {fileID: 1625462394}
+    - target: {fileID: 907209772424250608, guid: b25e09b19d1e22c4885a62bfaa316766,
+        type: 3}
+      propertyPath: characterOffset
+      value: 110
+      objectReference: {fileID: 0}
     - target: {fileID: 907209772424250614, guid: b25e09b19d1e22c4885a62bfaa316766,
         type: 3}
       propertyPath: m_Name
@@ -1674,7 +1679,7 @@ PrefabInstance:
     - target: {fileID: 907209772424250615, guid: b25e09b19d1e22c4885a62bfaa316766,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 100
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 907209772424250615, guid: b25e09b19d1e22c4885a62bfaa316766,
         type: 3}
