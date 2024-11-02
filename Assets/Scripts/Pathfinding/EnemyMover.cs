@@ -13,7 +13,7 @@ public class EnemyMover : MonoBehaviour
 	//public GameObject deathUI;
 	//public GameObject inGameUI;
 
-	EnemyManager enemy;
+	//EnemyManager enemy;
 	//public DataCreator dataCreatorScript;
 
 	// Animator Variables:
@@ -24,7 +24,7 @@ public class EnemyMover : MonoBehaviour
 
 	void Start()
     {
-		enemy = GetComponent<EnemyManager>();
+		//enemy = GetComponent<EnemyManager>();
 		anim = gameObject.GetComponent<Animator>();
 		walkReady = false;
 		//dataCreatorScript = FindObjectOfType<DataCreator>();
