@@ -1,0 +1,7 @@
+Test #, Maze Type, Maze Size, Max Distance, Status, Reason
+1,Prims,20,10,lose,Enemy caught the player
+2,Prims,35,29,lose,Enemy caught the player
+3,Recursive,50,26,lose,Enemy caught the player
+4,Recursive,20,13,lose,Enemy caught the player
+5,Prims,50,142,win,Player reached the goal
+6,Recursive,20,22,lose,Enemy caught the player

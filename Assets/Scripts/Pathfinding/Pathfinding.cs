@@ -26,6 +26,46 @@ public class Pathfinding : MonoBehaviour {
 
 	void Start(){
 		dataCreatorScript = FindObjectOfType<DataCreator>();
+		
+		if(Manager.instance.mazeType == "Recursive"){
+			switch (Manager.instance.mazeSize){
+				case 20:
+					maxCost = 356;
+					Debug.Log("Recursive, 20");
+					break;
+				case 35:
+					maxCost = 909;
+					Debug.Log("Recursive, 35");
+					break;
+				case 50:
+					maxCost = 1539;
+					Debug.Log("Recursive, 50");
+					break;
+				default:
+					maxCost = 2;
+					Debug.Log("Default.");
+					break;
+			}
+		} else if (Manager.instance.mazeType == "Prims"){
+			switch (Manager.instance.mazeSize){
+				case 20:
+					maxCost = 153;
+					Debug.Log("Prims, 20");
+					break;
+				case 35:
+					maxCost = 274;
+					Debug.Log("Prims, 35");
+					break;
+				case 50:
+					maxCost = 410;
+					Debug.Log("Prims, 50");
+					break;
+				default:
+					maxCost = 2;
+					Debug.Log("Default.");
+					break;
+			}
+		}
 	}
 	
 	
@@ -159,6 +199,7 @@ public class Pathfinding : MonoBehaviour {
 						}
 					} 
 					else {
+						// Debug.Log("Maxcost: " + maxCost);
 						Node closestNeighbour = neighbourList.Aggregate((x, y) => Math.Abs(x.gCost - maxCost) < Math.Abs(y.gCost - maxCost) ? x : y);
 						newCostToNeighbour = node.gCost + GetDistance(node, closestNeighbour);
 

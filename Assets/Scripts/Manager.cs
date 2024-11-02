@@ -15,6 +15,7 @@ public class Manager : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public int mazeSize, gridSize;
+    public string mazeType;
 
 
     void Awake()

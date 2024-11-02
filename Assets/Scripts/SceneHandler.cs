@@ -47,10 +47,12 @@ public class SceneHandler : MonoBehaviour
         // ValueHandler.mazeSize = sizeVal;
         Manager.instance.mazeSize = sizeVal;
         Manager.instance.gridSize = (sizeVal*5)+1;
+        Manager.instance.mazeType = typeVal;
 
         if (typeVal == "Recursive")
         {
             SceneManager.LoadSceneAsync(3);
+            Manager.instance.Resume();
             Manager.instance.LevelStart();
             /*if (sizeVal == "20")
             {
@@ -73,6 +75,7 @@ public class SceneHandler : MonoBehaviour
         {
             // SceneManager.LoadSceneAsync(2);
             SceneManager.LoadSceneAsync(2);
+            Manager.instance.Resume();
             Manager.instance.LevelStart();
             /*if (sizeVal == "20")
             {
