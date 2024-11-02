@@ -1,4 +1,0 @@
-Test #, Maze Type, Maze Size, Max Distance, Status, Reason
-1,Recursive,20,8,lose,Enemy caught the player
-2,Recursive,35,41,lose,Enemy caught the player
-3,Recursive,35,41,lose,Enemy caught the player

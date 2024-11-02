@@ -315,7 +315,7 @@ PrefabInstance:
     - target: {fileID: 7806934682174544974, guid: 773dfb8d4abde2842904b9c326230cc3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.25
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7806934682174544974, guid: 773dfb8d4abde2842904b9c326230cc3,
         type: 3}
@@ -687,6 +687,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1855864286}
+    - target: {fileID: 5515188826029154250, guid: 15cb4c56f49dc3c4aa19a481451dbcf6,
+        type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 726227492}
     - target: {fileID: 5515188826029154251, guid: 15cb4c56f49dc3c4aa19a481451dbcf6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -749,6 +754,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15cb4c56f49dc3c4aa19a481451dbcf6, type: 3}
+--- !u!20 &726227492 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 5515188826029154248, guid: 15cb4c56f49dc3c4aa19a481451dbcf6,
+    type: 3}
+  m_PrefabInstance: {fileID: 726227491}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &765901907
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,8 +857,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1450425934}
-  deathUI: {fileID: 147367660}
-  inGameUI: {fileID: 329985118}
   anim: {fileID: 0}
   rotationSpeed: 0
 --- !u!4 &805479838
@@ -3769,8 +3778,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1450425934}
-  deathUI: {fileID: 147367660}
-  inGameUI: {fileID: 329985118}
   anim: {fileID: 4878959102929670381}
   rotationSpeed: 0
 --- !u!1 &4881695011818544205

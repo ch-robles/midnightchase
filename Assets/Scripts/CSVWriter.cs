@@ -69,11 +69,11 @@ public class CSVWriter : MonoBehaviour
             {
                 foreach (var player in playerList)
                 {
-                    tw.WriteLine(player.testNum + "," +
-                                 player.mazeType + "," +
-                                 player.mazeSize + "," +
-                                 player.maxDis + "," +
-                                 player.status + "," +
+                    tw.WriteLine(player.testNum + ", " +
+                                 player.mazeType + ", " +
+                                 player.mazeSize + ", " +
+                                 player.maxDis + ", " +
+                                 player.status + ", " +
                                  player.reason);
                 }
             }

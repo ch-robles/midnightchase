@@ -86,6 +86,14 @@ public class Manager : MonoBehaviour
         Debug.Log("Win");
     }
 
+    public void Draw()
+    {
+        OnRaceEnd();
+        //AudioManager.instance.Win();
+        Pause();
+        Debug.Log("Draw");
+    }
+
 
     //----------------------------//
 

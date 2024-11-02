@@ -62,14 +62,14 @@ public class Grid : MonoBehaviour {
 	}
 
 	void PlaceStart(){
-		startPos = new Vector3(3, 0, gridSizeY - 3);
+		startPos = new Vector3(3, -1.20f, gridSizeY - 3);
 		start = Instantiate(startPrefab,startPos,Quaternion.identity) as GameObject;
 		// floor.transform.localScale = new Vector3(gridSizeX, 0.5f, gridSizeY);
 		// Debug.Log("Start block created!");
 	}
 
 	void PlaceEnd(){
-		endPos = new Vector3(gridSizeX - 3, 0, 3);
+		endPos = new Vector3(gridSizeX - 3, -1.20f, 3);
 		end = Instantiate(endPrefab,endPos,Quaternion.identity) as GameObject;
 		// floor.transform.localScale = new Vector3(gridSizeX, 0.5f, gridSizeY);
 		// Debug.Log("End block created!");

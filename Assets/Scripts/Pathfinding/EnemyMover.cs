@@ -10,11 +10,11 @@ public class EnemyMover : MonoBehaviour
 	Vector3[] path;
 	int targetIndex;
 
-	public GameObject deathUI;
-	public GameObject inGameUI;
+	//public GameObject deathUI;
+	//public GameObject inGameUI;
 
 	EnemyManager enemy;
-	public DataCreator dataCreatorScript;
+	//public DataCreator dataCreatorScript;
 
 	// Animator Variables:
 	public Animator anim;
@@ -27,7 +27,7 @@ public class EnemyMover : MonoBehaviour
 		enemy = GetComponent<EnemyManager>();
 		anim = gameObject.GetComponent<Animator>();
 		walkReady = false;
-		dataCreatorScript = FindObjectOfType<DataCreator>();
+		//dataCreatorScript = FindObjectOfType<DataCreator>();
     }
 
 	// EVERYTHING STARTS HERE (AFTER AFTER MAZE CREATION)
