@@ -23,12 +23,12 @@ public class MapCameraBig : MonoBehaviour
         if (scrollInput < 0f)
         {
             camera.orthographicSize++;
-            camera.orthographicSize = Mathf.Clamp(camera.orthographicSize, 50f, 100f);
         }
         else if (scrollInput > 0f)
         {
             camera.orthographicSize--;
-            camera.orthographicSize = Mathf.Clamp(camera.orthographicSize, 50f, 100f);
         }
+
+        camera.orthographicSize = Mathf.Clamp(camera.orthographicSize, 50f, 100f);
     }
 }
