@@ -17,6 +17,8 @@ public class Manager : MonoBehaviour
     public int mazeSize, gridSize;
     public string mazeType;
 
+    CSVWriter csvWriter;
+
 
     void Awake()
     {
@@ -35,7 +37,7 @@ public class Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        csvWriter = GameObject.Find("DataManager").GetComponent<CSVWriter>();
     }
 
     // Update is called once per frame
@@ -110,6 +112,7 @@ public class Manager : MonoBehaviour
         ButtonClick();
         Application.Quit();
         Debug.Log("Quit");
+        csvWriter.quitGame = true;
     }
 
     public void Restart()

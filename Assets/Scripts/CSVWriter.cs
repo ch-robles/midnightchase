@@ -7,6 +7,8 @@ public class CSVWriter : MonoBehaviour
 {
     string filename = "";
     public static CSVWriter instance;
+
+    public bool quitGame;
     void Awake()
     {
         if (instance == null)
@@ -50,9 +52,10 @@ public class CSVWriter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (quitGame == true)
         {
             WriteCSV();
+            quitGame = false;
         }
     }
 
