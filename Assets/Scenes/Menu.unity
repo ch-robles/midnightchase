@@ -3060,7 +3060,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: THE MAZE GAME
+  m_text: MIDNIGHT CHASE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: da9a26828d88de14da6b2e79e98b682f, type: 2}
   m_sharedMaterial: {fileID: -5266826114240629738, guid: da9a26828d88de14da6b2e79e98b682f,
@@ -5788,7 +5788,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: THE MAZE GAME
+  m_text: MIDNIGHT CHASE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: da9a26828d88de14da6b2e79e98b682f, type: 2}
   m_sharedMaterial: {fileID: -5266826114240629738, guid: da9a26828d88de14da6b2e79e98b682f,
