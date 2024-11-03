@@ -83,6 +83,7 @@ public class TutorialText : MonoBehaviour
                 three.SetActive(false);
                 four.SetActive(false);
                 five.SetActive(false);
+                six.SetActive(false);
             }
         }
     }
