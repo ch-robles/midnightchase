@@ -66,9 +66,9 @@ public class PA_Maze : MonoBehaviour
             // unvisitedNodes.Add(new List<primNode>());
             for (int b = 0; b < row; b++){
                 // 5.0f = current wall length! so ung gap between the gizmos cause they need to be centered
-                myPos = new Vector3(startPosition.x + (a*5.0f), 0.0f, startPosition.z + (b*5.0f));
-                Vector3 southPos = new Vector3(startPosition.x + (a*5.0f), 0.0f, startPosition.z + (b*5.0f) - 2.5f);
-                Vector3 eastPos = new Vector3(startPosition.x + (a*5.0f) + 2.5f, 0.0f, startPosition.z + (b*5f));
+                myPos = new Vector3(startPosition.x + (a*5.0f), 0.5f, startPosition.z + (b*5.0f));
+                Vector3 southPos = new Vector3(startPosition.x + (a*5.0f), 0.5f, startPosition.z + (b*5.0f) - 2.5f);
+                Vector3 eastPos = new Vector3(startPosition.x + (a*5.0f) + 2.5f, 0.5f, startPosition.z + (b*5f));
                 gizmoNode = Instantiate(gizmoPlacer,myPos,Quaternion.identity) as GameObject;
                 southwallPrefab = Instantiate(wall,southPos,Quaternion.Euler(0,90,0)) as GameObject;
                 eastwallPrefab = Instantiate(wall,eastPos,Quaternion.identity) as GameObject;

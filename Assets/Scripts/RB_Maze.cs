@@ -107,7 +107,7 @@ public class RB_Maze : MonoBehaviour
 		{
 			for (int b = 0; b <= column; b++)
 			{
-				myPos = new Vector3(startPosition.x + (b * wallLength) - wallLength/2 ,0.0f, startPosition.z + (a * wallLength) - wallLength/2);
+				myPos = new Vector3(startPosition.x + (b * wallLength) - wallLength/2 ,0.5f, startPosition.z + (a * wallLength) - wallLength/2);
 				tempWall = Instantiate(wall,myPos,Quaternion.identity) as GameObject;
 				
 				tempWall.name = "column " + a + "," + b;
@@ -121,7 +121,7 @@ public class RB_Maze : MonoBehaviour
 		{
 			for (int b = 0; b < column; b++)
 			{
-				myPos = new Vector3(startPosition.x + (b * wallLength) , 0.0f, startPosition.z +( a * wallLength) - wallLength);
+				myPos = new Vector3(startPosition.x + (b * wallLength) , 0.5f, startPosition.z +( a * wallLength) - wallLength);
 				tempWall = Instantiate(wall,myPos,Quaternion.Euler(0,90,0)) as GameObject;
 				tempWall.name = "row " + a + "," + b;
 				tempWall.transform.parent = wallHolder.transform;

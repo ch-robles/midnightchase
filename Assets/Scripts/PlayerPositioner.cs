@@ -15,7 +15,9 @@ public class PlayerPositioner : MonoBehaviour
 
     void Start(){
         // Mathf.RoundToInt(Manager.instance.gridSize);
-        Vector3 startPos = new Vector3(3, 0, Mathf.RoundToInt(Manager.instance.gridSize) - 3);
+        Vector3 startPos = new Vector3(3, 0.07f, Mathf.RoundToInt(Manager.instance.gridSize) - 3);
         transform.position = startPos;
+        // transform.rotation = Quaternion.Euler(0,180,0);
+        // snaps back around??!?!?!
     }
 }
