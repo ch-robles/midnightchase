@@ -126,6 +126,12 @@ public class Manager : MonoBehaviour
         csvWriter.quitGame = true;
     }
 
+    void OnApplicationQuit()
+    {
+        Debug.Log("Quit");
+        csvWriter.quitGame = true;
+    }
+
     public void Restart()
     {
         Destroy(gameObject);
