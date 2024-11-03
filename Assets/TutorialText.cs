@@ -7,7 +7,7 @@ using TMPro;
 public class TutorialText : MonoBehaviour
 {
     // [SerializeField] TextMeshProUGUI mainText;
-    [SerializeField] GameObject one, two, three, four;
+    [SerializeField] GameObject one, two, three, four, five, six;
 
     int textCounter = 0;
 
@@ -26,6 +26,7 @@ public class TutorialText : MonoBehaviour
         two.SetActive(false);
         three.SetActive(false);
         four.SetActive(false);
+        five.SetActive(false);
     }
 
     void Update() {
@@ -60,11 +61,28 @@ public class TutorialText : MonoBehaviour
                 textCounter++;
             }
 
+            if ((Input.mouseScrollDelta.y != 0) && textCounter < 4) {
+                // Debug.Log("Getting input axis: " + Input.GetAxis("Mouse X"));
+                // mainText.text = "Objective: Head to the objective before time runs out or before the tikbalang catches you.";
+                four.SetActive(false);
+                five.SetActive(true);
+                textCounter++;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape) && textCounter < 5) {
+                // Debug.Log("Getting input axis: " + Input.GetAxis("Mouse X"));
+                // mainText.text = "Objective: Head to the objective before time runs out or before the tikbalang catches you.";
+                five.SetActive(false);
+                six.SetActive(true);
+                textCounter++;
+            }
+
             if (Manager.instance.GetGameState() == GameStates.raceOver){
                 one.SetActive(false);
                 two.SetActive(false);
                 three.SetActive(false);
                 four.SetActive(false);
+                five.SetActive(false);
             }
         }
     }
