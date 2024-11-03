@@ -13,6 +13,7 @@ public class Manager : MonoBehaviour
     GameStates mazeState = GameStates.noMaze;
 
     public static bool GameIsPaused = false;
+    public bool tutorial = false;
 
     public int mazeSize, gridSize;
     public string mazeType;
@@ -95,6 +96,15 @@ public class Manager : MonoBehaviour
         Pause();
         Debug.Log("Draw");
     }
+
+    public void Tutorial(){
+        tutorial = true;
+    }
+
+    public void NotTutorial(){
+        tutorial = false;
+    }
+
 
 
     //----------------------------//

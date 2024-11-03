@@ -29,6 +29,9 @@ public class Timer : MonoBehaviour
         }
         else if(dataCreatorScript.chosenSize == 50){
             timeLimit = 600f;
+        } else {
+            timeLimit = 10000f;
+            // this is for the tutorial
         }
     }
 

@@ -51,9 +51,10 @@ public class SceneHandler : MonoBehaviour
 
         if (typeVal == "Recursive")
         {
-            SceneManager.LoadSceneAsync(3);
+            Manager.instance.NotTutorial();
             Manager.instance.Resume();
             Manager.instance.LevelStart();
+            SceneManager.LoadSceneAsync(3);
             /*if (sizeVal == "20")
             {
                 SceneManager.LoadSceneAsync(1);
@@ -74,9 +75,12 @@ public class SceneHandler : MonoBehaviour
         else if (typeVal == "Prims")
         {
             // SceneManager.LoadSceneAsync(2);
-            SceneManager.LoadSceneAsync(2);
+            Manager.instance.NotTutorial();
             Manager.instance.Resume();
             Manager.instance.LevelStart();
+            SceneManager.LoadSceneAsync(2);
+            // Debug.Log("Load scene async 2");
+            // Debug.Log("GameIsPaused: " + Manager.instance.GameIsPaused);
             /*if (sizeVal == "20")
             {
                 SceneManager.LoadSceneAsync(2);
@@ -90,6 +94,20 @@ public class SceneHandler : MonoBehaviour
                 SceneManager.LoadSceneAsync(2);
             }*/
         }
+    }
+
+    public void GoToTutorial(){
+        sizeVal = 10;
+        typeVal = "Recursive";
+
+        Manager.instance.mazeSize = sizeVal;
+        Manager.instance.gridSize = (sizeVal*5)+1;
+        Manager.instance.mazeType = typeVal;
+        
+        Manager.instance.Tutorial();
+        Manager.instance.Resume();
+        Manager.instance.LevelStart();
+        SceneManager.LoadSceneAsync(3);
     }
 
 }
