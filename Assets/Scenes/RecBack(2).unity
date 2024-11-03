@@ -302,7 +302,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u2713 Press WASD to move around the map."
+  m_text: ~ Press WASD to move around the map.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6d5f2d8731837ff4bb3259d6437c61d3, type: 2}
   m_sharedMaterial: {fileID: -1554701297480637547, guid: 6d5f2d8731837ff4bb3259d6437c61d3,
@@ -830,7 +830,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u2713 Press M to open your map."
+  m_text: ~ Press M to open your map.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6d5f2d8731837ff4bb3259d6437c61d3, type: 2}
   m_sharedMaterial: {fileID: -1554701297480637547, guid: 6d5f2d8731837ff4bb3259d6437c61d3,
@@ -1007,7 +1007,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u2713 Move mouse to look around."
+  m_text: ~ Move mouse to look around.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6d5f2d8731837ff4bb3259d6437c61d3, type: 2}
   m_sharedMaterial: {fileID: -1554701297480637547, guid: 6d5f2d8731837ff4bb3259d6437c61d3,
@@ -3071,7 +3071,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u2713 Move mouse to look around."
+  m_text: ~ Move mouse to look around.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6d5f2d8731837ff4bb3259d6437c61d3, type: 2}
   m_sharedMaterial: {fileID: -1554701297480637547, guid: 6d5f2d8731837ff4bb3259d6437c61d3,
@@ -3317,7 +3317,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u2713 Move mouse to look around."
+  m_text: ~ Move mouse to look around.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6d5f2d8731837ff4bb3259d6437c61d3, type: 2}
   m_sharedMaterial: {fileID: -1554701297480637547, guid: 6d5f2d8731837ff4bb3259d6437c61d3,
@@ -4436,7 +4436,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u2713 Press WASD to move around the map."
+  m_text: ~ Press WASD to move around the map.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6d5f2d8731837ff4bb3259d6437c61d3, type: 2}
   m_sharedMaterial: {fileID: -1554701297480637547, guid: 6d5f2d8731837ff4bb3259d6437c61d3,
