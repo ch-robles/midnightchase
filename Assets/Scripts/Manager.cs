@@ -105,6 +105,7 @@ public class Manager : MonoBehaviour
         SceneManager.LoadSceneAsync(0);
         OnRaceEnd();
         Debug.Log("GoToMain");
+        AudioManager.PlayMenuMusic();
     }
 
     public void QuitGame()
@@ -126,7 +127,7 @@ public class Manager : MonoBehaviour
         Debug.Log("Restart");
     }
 
-    public void StartGame()
+    /*public void StartGame()
     {
         Destroy(gameObject);
         instance = null;
@@ -134,7 +135,7 @@ public class Manager : MonoBehaviour
         LevelStart();
         Resume();
         Debug.Log("StartGame");
-    }
+    }*/
 
     //----------------------------//
 
@@ -146,6 +147,7 @@ public class Manager : MonoBehaviour
     public void LevelStart()
     {
         gameState = GameStates.countDown;
+        AudioManager.PlayGameMusic();
     }
 
     public void OnRaceStart()

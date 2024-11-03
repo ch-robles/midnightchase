@@ -47,7 +47,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 4310482576514202070}
   SFXSource: {fileID: 4310482575565220633}
-  background: {fileID: 8300000, guid: 5895526e2d219a541a91f7943eb8f9a0, type: 3}
+  menupause: {fileID: 8300000, guid: 795786f05dd52294986f017b7170c956, type: 3}
+  ingame: {fileID: 8300000, guid: 932bd4cc08c84dc4591f9b61e169c0eb, type: 3}
+  horse: {fileID: 8300000, guid: bb8718f9dc286344a9e05bf7324774a8, type: 3}
+  footsteps: {fileID: 8300000, guid: 693df29a6f3f843429edb0c873d03d8e, type: 3}
   click: {fileID: 8300000, guid: ceb3c749425aba84586cefe90ed925a3, type: 3}
   death: {fileID: 8300000, guid: 56f4c374b61192a4f9bcaff627341716, type: 3}
   win: {fileID: 8300000, guid: 5ee06f83cd702c040b33e0c1b2a41e4b, type: 3}

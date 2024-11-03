@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -9,7 +10,10 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource SFXSource;
 
     [Header("------ Audio Clip ------")]
-    public AudioClip background;
+    public AudioClip menupause;
+    public AudioClip ingame;
+    public AudioClip horse;
+    //public AudioClip footsteps;
     public AudioClip click;
     public AudioClip death;
     public AudioClip win;
@@ -33,15 +37,42 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        musicSource.clip = background;
-        musicSource.Play();
+        PlayMenuMusic ();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
+
+    static public void PlayMenuMusic ()
+	{
+		if (instance != null) {
+			if (instance.musicSource != null) {
+				instance.musicSource.Pause();
+				instance.musicSource.clip = instance.menupause;
+				instance.musicSource.Play();
+			}
+		} else {
+			Debug.LogError("Unavailable MusicPlayer component");
+		}
+	}
+
+    static public void PlayGameMusic ()
+	{
+		if (instance != null) {
+			if (instance.musicSource != null) {
+				instance.musicSource.Pause();
+				instance.musicSource.clip = instance.ingame;
+				instance.musicSource.Play();
+			}
+		} else {
+			Debug.LogError("Unavailable MusicPlayer component");
+		}
+	}
+
+    //---------------------------//
 
     public void PlaySFX(AudioClip clip)
     {
@@ -64,4 +95,11 @@ public class AudioManager : MonoBehaviour
     {
         PlaySFX(win);
     }
+
+    public void HorseNeigh()
+    {
+        PlaySFX(horse);
+    }
+
+   
 }

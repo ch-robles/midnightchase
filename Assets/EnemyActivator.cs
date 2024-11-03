@@ -38,5 +38,6 @@ public class EnemyActivator : MonoBehaviour
 
         enemyObject.SetActive(true);
         Debug.Log("Deployed enemy at timestamp: " + Time.time);
+        AudioManager.instance.HorseNeigh();
     }
 }

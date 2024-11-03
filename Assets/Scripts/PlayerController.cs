@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public AudioSource footstep;
     public Manager manager;
     [Header("Animator")]
     public Animator anim;
@@ -30,10 +31,18 @@ public class PlayerController : MonoBehaviour
         float z = Input.GetAxis("Vertical");
         gameObject.transform.Translate(x * speed * Time.deltaTime, y, z * speed * Time.deltaTime);
 
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)){
+            footstep.enabled = true;
+        } else{
+            footstep.enabled = false;
+        }
+
         if (speed >= 5) {
             anim.SetBool("isWalking", true);
         } else {
             anim.SetBool("isWalking", false);
         }
+
+
     }
 }

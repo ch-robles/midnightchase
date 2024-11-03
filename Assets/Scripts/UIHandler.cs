@@ -40,8 +40,8 @@ public class UIHandler : MonoBehaviour
         Manager.instance.LevelStart();
     }
 
-    public void StartGame()
-    {
-        Manager.instance.StartGame();
-    }
+    //public void StartGame()
+    //{
+    //    Manager.instance.StartGame();
+    //}
 }
