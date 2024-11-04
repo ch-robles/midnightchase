@@ -8,6 +8,7 @@ public class CSVWriter : MonoBehaviour
     string filename = "";
     public static CSVWriter instance;
 
+
     public bool quitGame;
     void Awake()
     {
@@ -41,10 +42,12 @@ public class CSVWriter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Directory.CreateDirectory(Application.streamingAssetsPath + "/CSVFiles/");
+
         int i = 1;
         do
         {
-            filename = Application.dataPath + "/csvFiles/test" + i + ".csv";
+            filename = Application.streamingAssetsPath + "/CSVFiles/test" + i + ".csv";
             i++;
         } while (File.Exists(filename));
     }
