@@ -27,17 +27,18 @@ public class TutorialText : MonoBehaviour
         three.SetActive(false);
         four.SetActive(false);
         five.SetActive(false);
+        six.SetActive(false);
     }
 
     void Update() {
         if (Manager.instance.tutorial && (Manager.instance.GetGameState() != GameStates.countDown)){
-            if (textCounter < 1){
+            if (textCounter == 0){
                 // mainText.text = "Move mouse to look around.";
                 // Debug.Log("Getting input axis: " + Input.GetAxis("Mouse X"));
                 one.SetActive(true);
             } 
             
-            if ((Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0) && textCounter < 1) {
+            if ((Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0) && textCounter == 0) {
                 // Debug.Log("Getting input axis: " + Input.GetAxis("Mouse X"));
                 // mainText.text = "Press WASD to move around the map.";
                 one.SetActive(false);
@@ -45,7 +46,7 @@ public class TutorialText : MonoBehaviour
                 textCounter++;
             }
 
-            if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)) && textCounter < 2) {
+            if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)) && textCounter == 1) {
                 // Debug.Log("Getting input axis: " + Input.GetAxis("Mouse X"));
                 // mainText.text = "Press M to open your map.";
                 two.SetActive(false);
@@ -53,7 +54,7 @@ public class TutorialText : MonoBehaviour
                 textCounter++;
             }
 
-            if (Input.GetKey(KeyCode.M) && textCounter < 3) {
+            if (Input.GetKey(KeyCode.M) && textCounter == 2) {
                 // Debug.Log("Getting input axis: " + Input.GetAxis("Mouse X"));
                 // mainText.text = "Objective: Head to the objective before time runs out or before the tikbalang catches you.";
                 three.SetActive(false);
@@ -61,7 +62,7 @@ public class TutorialText : MonoBehaviour
                 textCounter++;
             }
 
-            if ((Input.mouseScrollDelta.y != 0) && textCounter < 4) {
+            if ((Input.mouseScrollDelta.y != 0) && textCounter == 3) {
                 // Debug.Log("Getting input axis: " + Input.GetAxis("Mouse X"));
                 // mainText.text = "Objective: Head to the objective before time runs out or before the tikbalang catches you.";
                 four.SetActive(false);
@@ -69,7 +70,7 @@ public class TutorialText : MonoBehaviour
                 textCounter++;
             }
 
-            if (Input.GetKeyDown(KeyCode.Escape) && textCounter < 5) {
+            if (Input.GetKeyDown(KeyCode.Escape) && textCounter == 4) {
                 // Debug.Log("Getting input axis: " + Input.GetAxis("Mouse X"));
                 // mainText.text = "Objective: Head to the objective before time runs out or before the tikbalang catches you.";
                 five.SetActive(false);
