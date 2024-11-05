@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        float speed = 3f;
+        float speed = 4.2f;
         float x = Input.GetAxis("Horizontal");
         float y = 0;
         float z = Input.GetAxis("Vertical");
