@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
 
     public float currentTime;
 
-    public float timeLimit;
+    public float timeLimit = 0f;
 
     public GameObject drawUI;
     public GameObject inGameUI;
@@ -22,15 +22,15 @@ public class Timer : MonoBehaviour
         dataCreatorScript = FindObjectOfType<DataCreator>();
 
         if(dataCreatorScript.chosenSize == 20){
-            timeLimit = 300f;
+            currentTime = 300f; //5mins
         }
         else if(dataCreatorScript.chosenSize == 35){
-            timeLimit = 480f;
+            currentTime = 480f; //8mins
         }
         else if(dataCreatorScript.chosenSize == 50){
-            timeLimit = 600f;
+            currentTime = 600f; //10mins
         } else {
-            timeLimit = 10000f;
+            currentTime = 10000f;
             // this is for the tutorial
         }
     }
@@ -41,9 +41,9 @@ public class Timer : MonoBehaviour
         
         if (Manager.instance.GetGameState() == GameStates.running)
         {
-            currentTime += Time.deltaTime;
+            currentTime -= Time.deltaTime;
             
-            if (currentTime >= timeLimit)
+            if (currentTime <= timeLimit)
             {
                 OnTimeLimitReached();
             }
