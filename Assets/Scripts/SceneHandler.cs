@@ -99,6 +99,8 @@ public class SceneHandler : MonoBehaviour
     public void GoToTutorial(){
         sizeVal = 10;
         typeVal = "Recursive";
+        dataCreatorScript.chosenType = "Tutorial";
+        dataCreatorScript.chosenSize = sizeVal;
 
         Manager.instance.mazeSize = sizeVal;
         Manager.instance.gridSize = (sizeVal*5)+1;

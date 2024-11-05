@@ -1577,6 +1577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyObject: {fileID: 7772496926074693448}
+  enemyTracker: {fileID: 5730819074776833944}
 --- !u!4 &2012598187
 Transform:
   m_ObjectHideFlags: 0
@@ -2757,6 +2758,12 @@ PrefabInstance:
       objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1010dccbf72d9b49b81b09597f965aa, type: 3}
+--- !u!1 &5730819074776833944 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5730819074552316489, guid: f1010dccbf72d9b49b81b09597f965aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 5730819074776833943}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5807270330520258102
 Transform:
   m_ObjectHideFlags: 0

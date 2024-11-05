@@ -5,9 +5,11 @@ using UnityEngine;
 public class EnemyActivator : MonoBehaviour
 {
     [SerializeField] GameObject enemyObject;
+    [SerializeField] GameObject enemyTracker;
 
     void Start(){
         enemyObject.SetActive(false);
+        enemyTracker.SetActive(false);
         StartCoroutine(EnemyCountdown());
     }
 
@@ -37,6 +39,7 @@ public class EnemyActivator : MonoBehaviour
         yield return new WaitForSeconds(seconds + 3);
 
         enemyObject.SetActive(true);
+        enemyTracker.SetActive(true);
         Debug.Log("Deployed enemy at timestamp: " + Time.time);
         AudioManager.instance.HorseNeigh();
     }

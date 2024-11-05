@@ -126,9 +126,21 @@ public class Manager : MonoBehaviour
         csvWriter.quitGame = true;
     }
 
+    void OnApplicationFocus(bool hasFocus)
+    {   
+        if (hasFocus)
+        {
+            Debug.Log("Application in focus.");
+        }
+        else
+        {
+            Debug.Log("Application lost focus.");
+            csvWriter.quitGame = true;
+        }
+    }
+
     void OnApplicationQuit()
-    {
-        Debug.Log("Quit");
+    {   
         csvWriter.quitGame = true;
     }
 

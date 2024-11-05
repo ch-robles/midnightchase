@@ -29,6 +29,6 @@ public class MapCameraBig : MonoBehaviour
             camera.orthographicSize--;
         }
 
-        camera.orthographicSize = Mathf.Clamp(camera.orthographicSize, 50f, 100f);
+        camera.orthographicSize = Mathf.Clamp(camera.orthographicSize, 50f, 230f);
     }
 }
