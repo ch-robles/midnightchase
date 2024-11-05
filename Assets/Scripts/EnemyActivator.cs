@@ -1,15 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyActivator : MonoBehaviour
 {
     [SerializeField] GameObject enemyObject;
     [SerializeField] GameObject enemyTracker;
+    [SerializeField] Image wolfPicture;
 
     void Start(){
         enemyObject.SetActive(false);
         enemyTracker.SetActive(false);
+
+        if (wolfPicture != null)
+        {
+            wolfPicture.gameObject.SetActive(false);
+        }
+
         StartCoroutine(EnemyCountdown());
     }
 
@@ -42,5 +50,23 @@ public class EnemyActivator : MonoBehaviour
         enemyTracker.SetActive(true);
         Debug.Log("Deployed enemy at timestamp: " + Time.time);
         AudioManager.instance.HorseNeigh();
+        
+        if (wolfPicture != null)
+        {
+            StartCoroutine(ShowIndicator());
+        }
+        
+    }
+
+    IEnumerator ShowIndicator(){
+        //wolfPicture.enabled = true;
+        wolfPicture.gameObject.SetActive(true);
+
+        wolfPicture.CrossFadeAlpha(0, 2, false);
+        //yield return new WaitForSeconds(3);
+        //wolfPicture.enabled = false;
+        //wolfPicture.gameObject.SetActive(false);
+
+        yield return null;
     }
 }
