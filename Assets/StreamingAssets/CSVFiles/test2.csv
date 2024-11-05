@@ -1,0 +1,2 @@
+Test #, Maze Type, Maze Size, Initial Distance, Max Distance, Min Distance, Status, Reason
+1, Tutorial, 10, 145, 145, 2, lose, Enemy caught the player
