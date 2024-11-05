@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyMover : MonoBehaviour
 {
     public Transform target;
-	float speed = 2f;
+	float speed = 3f;
 	Vector3[] path;
 	int targetIndex;
 

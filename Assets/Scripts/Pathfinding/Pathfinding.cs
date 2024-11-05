@@ -11,6 +11,10 @@ public class Pathfinding : MonoBehaviour {
 	Grid grid;
 	int maxCost = 2;
 	public int maxLength = 0;
+	public int minLength = 100000;
+	public int initialDist = 0;
+	public int firstDist = 0;
+	
 	public DataCreator dataCreatorScript;
 	
 	/*void Awake() {
@@ -240,13 +244,27 @@ public class Pathfinding : MonoBehaviour {
 
 		// Debug.Log("Modified A* Path Length: " + path.Count + " blocks.");
 
-		if (maxLength < path.Count){
+		if (firstDist < 1) {
+			initialDist = path.Count;
+			firstDist++;
+			Debug.Log("First Distance: " + initialDist + " blocks.");
+		}
+		
+		if (path.Count > maxLength){
 			maxLength = path.Count;
+			Debug.Log("Max Distance: " + maxLength + " blocks.");
+		}
+
+		if (path.Count < minLength){
+			minLength = path.Count;
+			Debug.Log("Min Distance: " + minLength + " blocks.");
 		}
 
 		// Debug.Log("Current maxLength: " + maxLength);
 
 		dataCreatorScript.maxDistance = maxLength;
+		dataCreatorScript.minDistance = minLength;
+		dataCreatorScript.initialDistance = initialDist;
 
 		Vector3[] waypoints = SimplifyPath(path);
 		Array.Reverse(waypoints);

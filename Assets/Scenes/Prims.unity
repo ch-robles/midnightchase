@@ -248,7 +248,7 @@ MonoBehaviour:
   groundFloorPrefab: {fileID: 6286516625344985910, guid: 841288b4acff04e428bbe3d3138cee7e,
     type: 3}
   gridMaker: {fileID: 1877354854}
-  player: {fileID: 1702026469}
+  player: {fileID: 0}
   row: 20
   column: 20
 --- !u!4 &518199729
@@ -1300,18 +1300,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56acb0e87f29ede48b572dcd5429cb4b, type: 3}
---- !u!114 &1702026469 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7772496927761742754, guid: 773dfb8d4abde2842904b9c326230cc3,
-    type: 3}
-  m_PrefabInstance: {fileID: 7772496926074693447}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7772496926074693448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1d12c999782d1944a81c4b08d64bcf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1836053331
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,7 +1544,7 @@ MonoBehaviour:
   groundFloorPrefab: {fileID: 6286516625344985910, guid: 841288b4acff04e428bbe3d3138cee7e,
     type: 3}
   gridMaker: {fileID: 0}
-  player: {fileID: 1702026469}
+  player: {fileID: 0}
   row: 0
   column: 0
 --- !u!1 &2012598185
@@ -3100,7 +3088,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 13.937917
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7772496927761742754, guid: 773dfb8d4abde2842904b9c326230cc3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 773dfb8d4abde2842904b9c326230cc3, type: 3}
 --- !u!1 &7772496926074693448 stripped
 GameObject:

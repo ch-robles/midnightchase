@@ -10,7 +10,9 @@ public class DataCreator : MonoBehaviour
     public int i;
     public string chosenType;
     public int chosenSize;
+    public int initialDistance;
     public int maxDistance;
+    public int minDistance;
     public string playerStatus;
     public string playerReason;
     
@@ -34,10 +36,14 @@ public class DataCreator : MonoBehaviour
                 testNum = i++,
                 mazeType = chosenType,
                 mazeSize = chosenSize,
+                initDis = initialDistance,
                 maxDis = maxDistance,
+                minDis = minDistance,
                 status = playerStatus,
                 reason = playerReason
             };
+
+            Debug.Log("New entry added!");
 
             // Add to the PlayerList
             csvWriter.playerList.Add(newList);

@@ -30,7 +30,9 @@ public class CSVWriter : MonoBehaviour
         public int testNum;
         public string mazeType;
         public int mazeSize;
+        public int initDis;
         public int maxDis;
+        public int minDis;
         public string status;
         public string reason;
 
@@ -68,7 +70,7 @@ public class CSVWriter : MonoBehaviour
         {
             using (TextWriter tw = new StreamWriter(filename, false))
             {
-                tw.WriteLine("Test #, Maze Type, Maze Size, Max Distance, Status, Reason");
+                tw.WriteLine("Test #, Maze Type, Maze Size, Initial Distance, Max Distance, Min Distance, Status, Reason");
             }
 
             using (TextWriter tw = new StreamWriter(filename, true))
@@ -78,7 +80,9 @@ public class CSVWriter : MonoBehaviour
                     tw.WriteLine(player.testNum + ", " +
                                  player.mazeType + ", " +
                                  player.mazeSize + ", " +
+                                 player.initDis + ", " +
                                  player.maxDis + ", " +
+                                 player.minDis + ", " +
                                  player.status + ", " +
                                  player.reason);
                 }

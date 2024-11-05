@@ -24,9 +24,9 @@ public class EnemyActivator : MonoBehaviour
     IEnumerator EnemyCountdown(){
         Debug.Log("Started level at timestamp: " + Time.time);
         
-        int seconds = 10;
+        int seconds = 0;
 
-        if (Manager.instance.mazeSize == 20){
+        /*if (Manager.instance.mazeSize == 20){
 
             // yield return new WaitForSeconds(5);
             // Debug.Log("Current mazesize is: " + Manager.instance.mazeSize);
@@ -42,7 +42,7 @@ public class EnemyActivator : MonoBehaviour
             // yield return new WaitForSeconds(20);
             // Debug.Log("Current mazesize is: " + Manager.instance.mazeSize);
             seconds = 25;
-        }
+        }*/
 
         yield return new WaitForSeconds(seconds + 3);
 

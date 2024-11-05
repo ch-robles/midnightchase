@@ -913,7 +913,7 @@ GameObject:
   - component: {fileID: 7772496927761742752}
   - component: {fileID: 7772496927761742767}
   - component: {fileID: 7772496927761742755}
-  - component: {fileID: 7772496927761742754}
+  - component: {fileID: 1290503464955784349}
   - component: {fileID: 7429845472442877683}
   - component: {fileID: 7429845472442877682}
   m_Layer: 0
@@ -1022,12 +1022,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  deathUI: {fileID: 0}
-  inGameUI: {fileID: 0}
-  dataCreatorScript: {fileID: 0}
   anim: {fileID: 7429845472442877682}
   rotationSpeed: 0
---- !u!114 &7772496927761742754
+--- !u!114 &1290503464955784349
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1036,7 +1033,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7429845472442877684}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1d12c999782d1944a81c4b08d64bcf1, type: 3}
+  m_Script: {fileID: 11500000, guid: 82bd2bb2b45a2594b8735dac74cd3f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &7429845472442877683
