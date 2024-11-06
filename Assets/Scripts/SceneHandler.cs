@@ -54,7 +54,7 @@ public class SceneHandler : MonoBehaviour
             Manager.instance.NotTutorial();
             Manager.instance.Resume();
             Manager.instance.LevelStart();
-            SceneManager.LoadSceneAsync(3);
+            SceneManager.LoadSceneAsync(2);
             /*if (sizeVal == "20")
             {
                 SceneManager.LoadSceneAsync(1);
@@ -78,7 +78,7 @@ public class SceneHandler : MonoBehaviour
             Manager.instance.NotTutorial();
             Manager.instance.Resume();
             Manager.instance.LevelStart();
-            SceneManager.LoadSceneAsync(2);
+            SceneManager.LoadSceneAsync(1);
             // Debug.Log("Load scene async 2");
             // Debug.Log("GameIsPaused: " + Manager.instance.GameIsPaused);
             /*if (sizeVal == "20")
@@ -109,7 +109,7 @@ public class SceneHandler : MonoBehaviour
         Manager.instance.Tutorial();
         Manager.instance.Resume();
         Manager.instance.LevelStart();
-        SceneManager.LoadSceneAsync(3);
+        SceneManager.LoadSceneAsync(2);
     }
 
 }

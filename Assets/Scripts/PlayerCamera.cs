@@ -24,6 +24,8 @@ public class PlayerCamera : MonoBehaviour
 
     void Update()
     {
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 2.5f, player.transform.position.z);
+
         if (Manager.GameIsPaused == true || manager.GetGameState() == GameStates.raceOver)
         {
             Cursor.visible = true;
