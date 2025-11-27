@@ -40,10 +40,10 @@ A 3D maze game helping to improve NPC movement by testing a modified pathfinding
 
 ## ▶ How to Run
 
-1. Download the .zip file from the *Releases* section.  
+1. Download the `.zip` file from the **Releases** section.  
 2. Extract the folder.  
-3. Run MidnightChase.exe.  
-4. If Windows flags it as unknown, select *Run anyway*.
+3. Run `MidnightChase.exe`.  
+4. If Windows flags it as unknown, select **Run anyway**.
 
 
 
