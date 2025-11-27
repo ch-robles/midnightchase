@@ -13,7 +13,7 @@ A 3D maze game helping to improve NPC movement by testing a modified pathfinding
 
 
 
-## 🎥 Gameplay Previews
+## 🎥 Game Previews
 
 ### Main Menu
 
